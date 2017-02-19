@@ -1,0 +1,28 @@
+{
+  "name": "nightwatch-lean-e2e",
+  "version": "0.0.1",
+  "description": "A lean Nightwatch usage proposal",
+  "main": "nightwatch.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chromedriver": "^2.27.3",
+    "getenv": "^0.7.0",
+    "nightwatch": "^0.9.12"
+  },
+  "devDependencies": {
+    "ansi-to-html": "^0.6.0",
+    "nightwatch-html-reporter": "^2.0.0"
+  },
+  "scripts": {
+    "test": "RPT_DIR=reports/$APP_VERSION; mkdir -p \"$RPT_DIR\"; nightwatch --config nightwatch.conf.js | tee  \"$RPT_DIR/console-report.ansi\"; cat \"$RPT_DIR/console-report.ansi\" |  ansi-to-html -n > \"$RPT_DIR/console-report.html\""
+  },
+  "keywords": [
+    "nightwatch",
+    "UAT",
+    "TDD"
+  ],
+  "author": "Nestor Urquiza",
+  "license": "MIT"
+}
