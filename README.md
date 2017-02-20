@@ -3,11 +3,9 @@ End to end (e2e) testing is crucial to achieve true continuous delivery, the kin
 Tests succeed or fail for a specific deployed version. I believe most web applications are missing an important component that should be clearly visible, the application version.
 
 ## User Story
-```
-As a continuous delivery engineer
-I want an automated end to end (e2e) runner to be triggered in the testing environment, as long as it hasn’t run for the current deployed in that environment application version*
-So that I can determine if such released version is ready for production deployment
-```
+> > *As a continuous delivery engineer*  
+> > *I want an automated end to end (e2e) runner to be triggered in the testing environment, as long as it hasn’t run for the current deployed in that environment application version*  
+> > *So that I can determine if such released version is ready for production deployment*
 
 This is a proposal for lean e2e with Nightwatch. In a nutshell Nightwatch should:
 * Run as many tests as the machine is able to run in parallel (there are three tests being run in this example). CPUs should be increased only when the whole suite goes beyond the acceptable runtime.
