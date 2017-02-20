@@ -4,7 +4,7 @@ Tests succeed or fail for a specific deployed version. I believe most web applic
 
 ## User Story
 > > *As a continuous delivery engineer*  
-> > *I want an automated end to end (e2e) runner to be triggered in the testing environment, as long as it hasn’t run for the current deployed in that environment application version*  
+> > *I want an automated end to end (e2e) runner to be triggered in the testing environment, as long as it hasn’t run for the current deployed-in-that-environment application version*  
 > > *So that I can determine if such released version is ready for production deployment*
 
 This is a proposal for lean e2e with Nightwatch. In a nutshell Nightwatch should:
