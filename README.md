@@ -24,8 +24,13 @@ git clone git@github.com:nestoru/nightwatch-lean-e2e.git
 cd nightwatch-lean-e2e
 npm install
 rm -fr reports/
-npm test
+export APP_VERSION=1.0 && npm test
 tree -I 'node_modules'
+```
+
+## Play in slow motion
+```
+export APP_VERSION=1.0; cpulimit -l 50 -i npm test
 ```
 
 ## Output
