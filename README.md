@@ -29,8 +29,19 @@ tree -I 'node_modules'
 ```
 
 ## Play in slow motion
+Basically run in background and use cpulimit specifying the percentage of CPU allowed via the -l flag (10% below) and make sure you look into it every 5 minutes even though chromedriver actually runs just one process. For linux do not use the -i flag.
 ```
-export APP_VERSION=1.0; cpulimit -l 50 -i npm test
+APP_VERSION=1.0 \
+npm test & \
+while true; do \
+ps -ef|grep 'chromedriver' | \
+awk '{print $2}' | \
+xargs -0 cpulimit -l 10 -i -p; sleep 5; \
+done
+```
+To force stop you need to kill the background test:
+```
+kill %1
 ```
 
 ## Output
